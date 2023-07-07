@@ -1,30 +1,56 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div id="app">
+    <header>
+      <nav>
+        <ul>
+          <li><router-link to="/">Home</router-link></li>
+          <li><router-link to="/weather">Weather</router-link></li>
+          <li><router-link to="/location">Location</router-link></li>
+          <li><router-link to="/stopwatch">Stopwatch</router-link></li>
+          <li><router-link to="/photo">Picture</router-link></li>
+        </ul>
+      </nav>
+    </header>
+    <router-view></router-view>
+  </div>
 </template>
+
+<script>
+export default {
+  name: 'App',
+};
+</script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #1f456c;
+  margin-top: 10px;
 }
 
 nav {
-  padding: 30px;
+  padding: 20px;
 }
-
+header {
+  background: #b2dffa;
+  padding: 10px;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
 nav a {
-  font-weight: bold;
-  color: #2c3e50;
+  text-decoration: none;
 }
-
-nav a.router-link-exact-active {
-  color: #42b983;
+nav a:hover {
+  text-decoration:crimson;
 }
 </style>
